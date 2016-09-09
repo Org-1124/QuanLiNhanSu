@@ -25,9 +25,15 @@ namespace DAO
         {
 
         }
+<<<<<<< HEAD
         public static void NhapDong()
         {
 
+=======
+        public static void GoiHon()
+        {
+            
+>>>>>>> refs/remotes/origin/master
         }
     }
 }
