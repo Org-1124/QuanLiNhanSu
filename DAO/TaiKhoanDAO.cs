@@ -17,6 +17,10 @@ namespace DAO
       {
           
       }
+       public static void Sua()
+       {
+           
+       }
         public static void Xoa()
         {
 
