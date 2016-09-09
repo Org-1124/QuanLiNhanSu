@@ -9,16 +9,13 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-<<<<<<< HEAD
         public static void Them()
         {
 
         }
-=======
-      public static void LayDuLieu
+      public static void LayDuLieu()
       {
           
       }
->>>>>>> refs/remotes/origin/master
     }
 }
