@@ -9,6 +9,6 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-        public string taikhoan;
+      public static Xoa();
     }
 }
