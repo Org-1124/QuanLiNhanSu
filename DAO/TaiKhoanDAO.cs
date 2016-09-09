@@ -9,6 +9,10 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
+<<<<<<< HEAD
 dfhgpsk
+=======
+        public string taikhoan;
+>>>>>>> refs/remotes/origin/haison
     }
 }
