@@ -17,16 +17,13 @@ namespace DAO
       {
           
       }
-<<<<<<< HEAD
        public static void Sua()
        {
            
        }
-=======
         public static void Xoa()
         {
 
         }
->>>>>>> refs/remotes/origin/master
     }
 }
