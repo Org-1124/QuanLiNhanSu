@@ -9,6 +9,9 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-      public static Xoa();
+        public static void Them()
+        {
+
+        }
     }
 }
