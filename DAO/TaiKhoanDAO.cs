@@ -25,5 +25,9 @@ namespace DAO
         {
 
         }
+        public static void NhapDong()
+        {
+
+        }
     }
 }
