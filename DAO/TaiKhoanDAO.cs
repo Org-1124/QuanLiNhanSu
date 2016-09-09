@@ -17,5 +17,9 @@ namespace DAO
       {
           
       }
+       public static void Sua()
+       {
+           
+       }
     }
 }
