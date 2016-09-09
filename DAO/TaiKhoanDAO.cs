@@ -13,5 +13,17 @@ namespace DAO
         {
 
         }
+      public static void LayDuLieu()
+      {
+          
+      }
+       public static void Sua()
+       {
+           
+       }
+        public static void Xoa()
+        {
+
+        }
     }
 }
