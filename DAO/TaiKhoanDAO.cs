@@ -9,6 +9,5 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-
     }
 }
