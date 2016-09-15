@@ -9,25 +9,5 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-        public static void Them()
-        {
-
-        }
-      public static void LayDuLieu()
-      {
-          
-      }
-       public static void Sua()
-       {
-           
-       }
-        public static void Xoa()
-        {
-
-        }
-        public static void GoiHon()
-        {
-            
-        }
     }
 }
