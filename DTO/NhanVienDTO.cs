@@ -7,8 +7,8 @@ namespace DTO
 {
     public class NhanVienDTO
     {
-        private string _iDNhanVien;
-        public string IDNhanVien
+        private int _iDNhanVien;
+        public int IDNhanVien
         {
             get { return _iDNhanVien; }
             set { _iDNhanVien = value; }
@@ -52,9 +52,9 @@ namespace DTO
             set { _chucVu = value; }
         }
 
-        private string _iDQuanLi;
+        private int _iDQuanLi;
 
-        public string IDQuanLi
+        public int IDQuanLi
         {
             get { return _iDQuanLi; }
             set { _iDQuanLi = value; }
@@ -66,9 +66,9 @@ namespace DTO
             get { return _luong; }
             set { _luong = value; }
         }
-        private string _idPhong;
+        private int _idPhong;
 
-        public string IdPhong
+        public int IdPhong
         {
             get { return _idPhong; }
             set { _idPhong = value; }
