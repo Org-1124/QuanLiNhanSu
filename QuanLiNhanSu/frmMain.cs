@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using DAO;
 using DTO;
 namespace QuanLiNhanSu
@@ -38,6 +39,32 @@ namespace QuanLiNhanSu
             dgvNhanVien.Columns["QuanLi"].HeaderText = "Quản lí";
             dgvNhanVien.Columns["Luong"].HeaderText = "Lương";
             dgvNhanVien.Columns["TenPhong"].HeaderText = "Tên phòng";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlConnection con;
+            con = DataProvider.KetNoi();
+            string sTruyVan = "select a.IDNhanVien,a.HoTen,a.NgaySinh,a.GioiTinh,a.QueQuan,a.ChucVu,b.HoTen 'QuanLi',a.Luong,TenPhong from (tblNhanVien a left join tblNhanVien b on a.IDQuanLi = b.IDNhanVien) join tblPhongBan on a.IDPhong = tblPhongBan.IDPhong and a.HoTen like N'%" + txtTimKiem.Text + "%'";
+            dgvNhanVien.DataSource = NhanVienDAO.SearchNhanVien(sTruyVan);
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SqlConnection con;
+                con = DataProvider.KetNoi();
+                string sTruyVan = "select a.IDNhanVien,a.HoTen,a.NgaySinh,a.GioiTinh,a.QueQuan,a.ChucVu,b.HoTen 'QuanLi',a.Luong,TenPhong from (tblNhanVien a left join tblNhanVien b on a.IDQuanLi = b.IDNhanVien) join tblPhongBan on a.IDPhong = tblPhongBan.IDPhong and a.HoTen like N'%" + txtTimKiem.Text + "%'";
+                dgvNhanVien.DataSource = NhanVienDAO.SearchNhanVien(sTruyVan);
+            }
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvNhanVien.Rows[e.RowIndex];
+            txtIDNhanVien.Text = row.Cells[0].Value.ToString();
         }
     }
 }
