@@ -137,6 +137,7 @@
             this.thêmTàiKhoảnToolStripMenuItem.Name = "thêmTàiKhoảnToolStripMenuItem";
             this.thêmTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.thêmTàiKhoảnToolStripMenuItem.Text = "Thêm tài khoản";
+            this.thêmTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thêmTàiKhoảnToolStripMenuItem_Click);
             // 
             // xóaTàiKhoảnToolStripMenuItem
             // 
@@ -483,7 +484,6 @@
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(948, 220);
             this.dgvNhanVien.TabIndex = 0;
-            this.dgvNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNhanVien_CellMouseClick);
             this.dgvNhanVien.Click += new System.EventHandler(this.dgvNhanVien_Click);
             // 
             // panel1

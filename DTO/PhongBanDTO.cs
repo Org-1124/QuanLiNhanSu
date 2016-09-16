@@ -7,9 +7,9 @@ namespace DTO
 {
     public class PhongBanDTO
     {
-        private string _idPhong;
+        private int _idPhong;
 
-        public string IdPhong
+        public int IdPhong
         {
             get { return _idPhong; }
             set { _idPhong = value; }
