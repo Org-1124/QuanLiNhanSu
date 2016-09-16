@@ -68,9 +68,11 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
-            } 
-            cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value.ToString();
-            cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value.ToString();
+
+            }
+
+            cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
+            cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if(dr.Cells["GioiTinh"].Value.ToString().ToUpper()=="NAM")
             {
                 rdbNam.Checked = true;
@@ -104,25 +106,12 @@ namespace QuanLiNhanSu
 
         private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvNhanVien.Rows[e.RowIndex];
-            txtIDNhanVien.Text = row.Cells[0].Value.ToString();
-            txtHoTen.Text = row.Cells[1].Value.ToString();
-            dtpNgaySinh.Text = row.Cells[2].Value.ToString();
-            if(row.Cells[3].Value.ToString()=="nam" || row.Cells[3].Value.ToString()=="Nam")
-            {
-                rdbNam.Checked = true;
-              
-            }
-            else
-            {
-                rdbNu.Checked = false;
-            }
-            txtQueQuan.Text = row.Cells[4].Value.ToString();
-            txtChucVu.Text = row.Cells[5].Value.ToString();
-            cboQuanLi.Text = row.Cells[6].Value.ToString();
-            txtLuong.Text = row.Cells[7].Value.ToString();
-            cboPhongBan.Text = row.Cells[8].Value.ToString();
+
+        }
+
+        private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
