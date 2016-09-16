@@ -84,7 +84,8 @@ namespace QuanLiNhanSu
         }
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
+            frm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -118,8 +119,6 @@ namespace QuanLiNhanSu
 
         public void ReadOnly1()
         {
-            FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
-            frm.ShowDialog();
             txtChucVu.ReadOnly = true;
             txtHoTen.ReadOnly = true;
             txtIDNhanVien.ReadOnly = true;

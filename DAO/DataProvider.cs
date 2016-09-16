@@ -10,11 +10,7 @@ namespace DAO
     {
         public static SqlConnection KetNoi()
         {
-<<<<<<< HEAD
             string sChuoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLiNhanSu;Integrated Security=True";
-=======
-            string sChuoi = @"Data Source=.\TUNGNTDEV;Initial Catalog=QuanLiNhanSu;Integrated Security=True";
->>>>>>> refs/remotes/origin/master
             SqlConnection con = new SqlConnection(sChuoi);
             con.Open();
             return con;
