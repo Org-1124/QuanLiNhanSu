@@ -13,7 +13,7 @@ namespace DAO
 
         public static DataTable LoadDataNV()
         {
-            string sTruyVan = "select * from tblNhanVien";
+            string sTruyVan = "select a.IDNhanVien,a.HoTen,a.NgaySinh,a.GioiTinh,a.QueQuan,a.ChucVu,b.HoTen 'QuanLi',a.Luong,TenPhong,a.IDPhong,a.IDQuanLi from (tblNhanVien a left join tblNhanVien b on a.IDQuanLi = b.IDNhanVien) join tblPhongBan on a.IDPhong = tblPhongBan.IDPhong";
             con = DataProvider.KetNoi();
             DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
             DataProvider.DongKetNoi(con);
@@ -82,6 +82,15 @@ namespace DAO
         public static DataTable LayThongTinNhanVien(int IDNhanVien)
         {
             string sTruyVan = string.Format("Select * From tblNhanVien where IDNhanVien='{0}'", IDNhanVien);
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
+
+        public static DataTable SearchNV(string tim)
+        {
+            string sTruyVan = "select a.IDNhanVien,a.HoTen,a.NgaySinh,a.GioiTinh,a.QueQuan,a.ChucVu,b.HoTen 'QuanLi',a.Luong,TenPhong,a.IDPhong,a.IDQuanLi from (tblNhanVien a left join tblNhanVien b on a.IDQuanLi = b.IDNhanVien) join tblPhongBan c on a.IDPhong = c.IDPhong and (a.HoTen like N'%" + tim + "%' or  a.ChucVu like N'%" + tim + "%' or a.QueQuan like N'%" + tim + "%' or c.TenPhong like N'%" + tim + "%')";
             con = DataProvider.KetNoi();
             DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
             DataProvider.DongKetNoi(con);
