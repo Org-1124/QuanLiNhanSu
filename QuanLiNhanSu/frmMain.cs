@@ -69,6 +69,7 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
+
             }
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
@@ -81,7 +82,6 @@ namespace QuanLiNhanSu
                 rdbNu.Checked = true;
             }
         }
-
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -118,6 +118,8 @@ namespace QuanLiNhanSu
 
         public void ReadOnly1()
         {
+            FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
+            frm.ShowDialog();
             txtChucVu.ReadOnly = true;
             txtHoTen.ReadOnly = true;
             txtIDNhanVien.ReadOnly = true;

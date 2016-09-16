@@ -129,7 +129,7 @@
             this.xóaTàiKhoảnToolStripMenuItem,
             this.đổiMậtKhẩuToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // thêmTàiKhoảnToolStripMenuItem
@@ -461,6 +461,7 @@
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
