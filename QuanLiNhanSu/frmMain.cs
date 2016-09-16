@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using DAO;
 using DTO;
 namespace QuanLiNhanSu
@@ -68,12 +69,16 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
+<<<<<<< HEAD
 
             }
 
+=======
+            }
+>>>>>>> refs/remotes/origin/tuananh
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
-            if(dr.Cells["GioiTinh"].Value.ToString().ToUpper()=="NAM")
+            if (dr.Cells["GioiTinh"].Value.ToString().ToUpper() == "NAM")
             {
                 rdbNam.Checked = true;
             }
@@ -83,36 +88,57 @@ namespace QuanLiNhanSu
             }
         }
 
-        private void txtHoTen_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQueQuan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLuong_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtChucVu_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvNhanVien.DataSource = NhanVienDAO.SearchNV(txtTimKiem.Text);
+                ReadOnly1();
+            }
+            catch
+            {
+                MessageBox.Show("Không tìm thấy !");
+            }
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    dgvNhanVien.DataSource = NhanVienDAO.SearchNV(txtTimKiem.Text);
+                    ReadOnly1();
+                }
+            }
+           catch
+            {
+                MessageBox.Show("Không tìm thấy !");
+            }
+        }
+
+        public void ReadOnly1()
+        {
+<<<<<<< HEAD
             FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
             frm.ShowDialog();
+=======
+            txtChucVu.ReadOnly = true;
+            txtHoTen.ReadOnly = true;
+            txtIDNhanVien.ReadOnly = true;
+            txtLuong.ReadOnly = true;
+            txtQueQuan.ReadOnly = true;
+            cboPhongBan.Enabled = false;
+            dtpNgaySinh.Enabled = false;
+            cboQuanLi.Enabled = false;
+            rdbNam.Enabled = false;
+            rdbNu.Enabled = false;
+>>>>>>> refs/remotes/origin/tuananh
         }
     }
 }
