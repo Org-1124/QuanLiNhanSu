@@ -1,0 +1,32 @@
+thế công  :  làm giao diện phòng ban
++thiết kế form riêng , cấu trúc tương tự nhân viên
++đổ dữ liệu vào form và các trường
++ Xử lí chức năng đăng nhập hệ thống
+Tuấn anh : Làm lớp DAO và tìm kiếm
++ xử lí các lớp trong DAO
++ làm chức năng tìm kiếm trong nhân viên
++ làm chức năng tìm kiếm trong phòng ban
+Thanh Tùng:
++Làm chức năng thêm sửa xóa của nhân viên
++ Làm DTO;
+Sỹ việt:
++Làm tài liệu hướng dẫn sử dụng
++Làm chức năng F1 Trợ giúp
++ Làm chức năng thêm sửa xóa phòng ban
+Hải Sơn :
++ Thiết kế form nhân viên
++ Đổ dữ liệu vào form
++ Thiết kế cơ sở dữ liệu
++ Lập tài liệu quản lí , tiến trình công việc
++ Lâp tài liệu báo cáo sản phẩm
+
+Mô hình của phần mềm
++Bước 1 : Đăng nhập vào chương trình (Thế Công)
++Bước 2 : Hiển thị form và dữ liệu  nhân viên (Hải Sơn)
++Bước 3 : đọc tài liệu hướng dẫn sử dụng (Sĩ việt)
++Bước 4 : Tìm kiếm nhân viên(Tuấn Anh)
++Bước 5 : thực hiện thêm sửa xóa nhân viên ( Thanh tùng)
++Bước 6 : truy cập quản lí phòng ban , hiện form phòng ban ( Thế Công)
++bước 7 : tìm kiếm phòng ban (Tuấn Anh)
++Bước 8 : thêm sửa xóa phòng ban (Sĩ việt)
++Bước 9 : Thêm sửa xóa tìa khỏa ( Hải Sơn)
