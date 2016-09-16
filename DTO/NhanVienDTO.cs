@@ -7,8 +7,8 @@ namespace DTO
 {
     public class NhanVienDTO
     {
-        private string _iDNhanVien;
-        public string IDNhanVien
+        private int _iDNhanVien;
+        public int IDNhanVien
         {
             get { return _iDNhanVien; }
             set { _iDNhanVien = value; }
