@@ -69,7 +69,9 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
+
             }
+
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if (dr.Cells["GioiTinh"].Value.ToString().ToUpper() == "NAM")
@@ -81,10 +83,10 @@ namespace QuanLiNhanSu
                 rdbNu.Checked = true;
             }
         }
-
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
+            frm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -128,6 +130,12 @@ namespace QuanLiNhanSu
             cboQuanLi.Enabled = false;
             rdbNam.Enabled = false;
             rdbNu.Enabled = false;
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhongban frmPhongban = new frmPhongban();
+            frmPhongban.ShowDialog();
         }
     }
 }
