@@ -15,7 +15,6 @@ namespace QuanLiNhanSu
         public frmMain()
         {
             InitializeComponent();
-            btnLuu.Visible = false;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -27,6 +26,7 @@ namespace QuanLiNhanSu
         {
             dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
             SetHeaderColumn();
+            LoadComboBox();
         }
         public void SetHeaderColumn()
         {
@@ -39,19 +39,68 @@ namespace QuanLiNhanSu
             dgvNhanVien.Columns["QuanLi"].HeaderText = "Quản lí";
             dgvNhanVien.Columns["Luong"].HeaderText = "Lương";
             dgvNhanVien.Columns["TenPhong"].HeaderText = "Tên phòng";
+            dgvNhanVien.Columns["IDQuanLi"].Visible = false;
+            dgvNhanVien.Columns["IDPhong"].Visible = false;
+        }
+        public void LoadComboBox()
+        {
+            cboPhongBan.DataSource = PhongBanDAO.LoadDataPB();
+            cboPhongBan.ValueMember = "IDPhong";
+            cboPhongBan.DisplayMember = "TenPhong";
+            cboQuanLi.DataSource = NhanVienDAO.LoadDataNV();
+            cboQuanLi.ValueMember = "IDNhanVien";
+            cboQuanLi.DisplayMember = "HoTen";
+        }
+        private void dgvNhanVien_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dgvNhanVien.SelectedRows[0];
+            txtIDNhanVien.Text = dr.Cells["IDNhanVien"].Value.ToString();
+            txtHoTen.Text = dr.Cells["HoTen"].Value.ToString();
+            txtLuong.Text = dr.Cells["Luong"].Value.ToString();
+            txtQueQuan.Text = dr.Cells["QueQuan"].Value.ToString();
+            txtChucVu.Text = dr.Cells["ChucVu"].Value.ToString();
+            DateTime dt;
+            DateTime.TryParse(dr.Cells["NgaySinh"].Value.ToString(), out dt);
+            if (dt.Year < 1995)
+            {
+                dtpNgaySinh.Value = DateTimePicker.MinimumDateTime;
+            }
+            else
+            {
+                dtpNgaySinh.Value = dt;
+            } 
+            cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value.ToString();
+            cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value.ToString();
+            if(dr.Cells["GioiTinh"].Value.ToString().ToUpper()=="NAM")
+            {
+                rdbNam.Checked = true;
+            }
+            else
+            {
+                rdbNu.Checked = true;
+            }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
-            btnLuu.Visible = true;
-            txtHoTen.Focus();
-            txtIDNhanVien.ReadOnly=true;
+
         }
 
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void txtQueQuan_TextChanged(object sender, EventArgs e)
         {
-            btnLuu.Visible = false;
+
         }
+
+        private void txtLuong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtChucVu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

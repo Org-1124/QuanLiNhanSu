@@ -30,8 +30,8 @@ namespace DTO
             set { _ngaySinh = value; }
         }
 
-        private bool _gioiTinh;
-        public bool GioiTinh
+        private string _gioiTinh;
+        public string GioiTinh
         {
             get { return _gioiTinh; }
             set { _gioiTinh = value; }
