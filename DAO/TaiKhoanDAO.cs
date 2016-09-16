@@ -9,9 +9,5 @@ namespace DAO
 {
     public class TaiKhoanDAO
     {
-      public static void LayDuLieu
-      {
-          
-      }
     }
 }
