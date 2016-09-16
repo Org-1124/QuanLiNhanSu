@@ -20,6 +20,14 @@ namespace DAO
             return dt;
         }
 
+        public static DataTable SearchNhanVien(string sTruyVan)
+        {
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
+
         public static DataTable HienThiYeuCau(string a)
         {
             string sTruyVan = "select * from tblNhanVien where idNhanVien=";
