@@ -290,7 +290,6 @@
             this.txtLuong.ReadOnly = true;
             this.txtLuong.Size = new System.Drawing.Size(155, 20);
             this.txtLuong.TabIndex = 17;
-            this.txtLuong.TextChanged += new System.EventHandler(this.txtLuong_TextChanged);
             // 
             // label8
             // 
@@ -326,7 +325,6 @@
             this.txtChucVu.ReadOnly = true;
             this.txtChucVu.Size = new System.Drawing.Size(155, 20);
             this.txtChucVu.TabIndex = 13;
-            this.txtChucVu.TextChanged += new System.EventHandler(this.txtChucVu_TextChanged);
             // 
             // label6
             // 
@@ -375,7 +373,6 @@
             this.txtQueQuan.ReadOnly = true;
             this.txtQueQuan.Size = new System.Drawing.Size(155, 20);
             this.txtQueQuan.TabIndex = 7;
-            this.txtQueQuan.TextChanged += new System.EventHandler(this.txtQueQuan_TextChanged);
             // 
             // label4
             // 
@@ -410,7 +407,6 @@
             this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(155, 20);
             this.txtHoTen.TabIndex = 3;
-            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // label2
             // 
@@ -465,6 +461,7 @@
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -509,6 +506,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Search";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtTimKiem
             // 
@@ -516,6 +514,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(155, 20);
             this.txtTimKiem.TabIndex = 8;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // label10
             // 
