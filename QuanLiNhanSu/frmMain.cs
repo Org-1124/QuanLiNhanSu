@@ -60,7 +60,7 @@ namespace QuanLiNhanSu
             txtIDNhanVien.Text = row.Cells[0].Value.ToString();
             txtHoTen.Text = row.Cells[1].Value.ToString();
             dtpNgaySinh.Text = row.Cells[2].Value.ToString();
-            if(row.Cells[3].Value.ToString()=="nam" || row.Cells[3].Value.ToString()=="Nam")
+            if(row.Cells[3].Value.ToString().ToUpper()=="NAM")
             {
                 rdbNam.Checked = true;
               
