@@ -70,7 +70,7 @@ namespace QuanLiNhanSu
                 dtpNgaySinh.Value = dt;
 
             }
-
+           
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if(dr.Cells["GioiTinh"].Value.ToString().ToUpper()=="NAM")
@@ -112,6 +112,12 @@ namespace QuanLiNhanSu
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhongban frmPhongban = new frmPhongban();
+            frmPhongban.ShowDialog();
         }
     }
 }
