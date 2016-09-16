@@ -68,11 +68,9 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
-<<<<<<< HEAD
+
             }
-=======
-            } 
->>>>>>> origin/master
+
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if(dr.Cells["GioiTinh"].Value.ToString().ToUpper()=="NAM")
