@@ -59,12 +59,5 @@ namespace QuanLiNhanSu
                 dgvNhanVien.DataSource = NhanVienDAO.SearchNhanVien(sTruyVan);
             }
         }
-
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvNhanVien.Rows[e.RowIndex];
-            txtIDNhanVien.Text = row.Cells[0].Value.ToString();
-        }
     }
 }
