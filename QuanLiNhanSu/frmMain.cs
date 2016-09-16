@@ -15,6 +15,7 @@ namespace QuanLiNhanSu
         public frmMain()
         {
             InitializeComponent();
+            btnLuu.Visible = false;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -38,6 +39,41 @@ namespace QuanLiNhanSu
             dgvNhanVien.Columns["QuanLi"].HeaderText = "Quản lí";
             dgvNhanVien.Columns["Luong"].HeaderText = "Lương";
             dgvNhanVien.Columns["TenPhong"].HeaderText = "Tên phòng";
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            btnLuu.Visible = true;
+            txtHoTen.Focus();
+            txtIDNhanVien.ReadOnly=true;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            btnLuu.Visible = false;
+        }
+
+        private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvNhanVien.Rows[e.RowIndex];
+            txtIDNhanVien.Text = row.Cells[0].Value.ToString();
+            txtHoTen.Text = row.Cells[1].Value.ToString();
+            dtpNgaySinh.Text = row.Cells[2].Value.ToString();
+            if(row.Cells[3].Value.ToString()=="nam" || row.Cells[3].Value.ToString()=="Nam")
+            {
+                rdbNam.Checked = true;
+              
+            }
+            else
+            {
+                rdbNu.Checked = false;
+            }
+            txtQueQuan.Text = row.Cells[4].Value.ToString();
+            txtChucVu.Text = row.Cells[5].Value.ToString();
+            cboQuanLi.Text = row.Cells[6].Value.ToString();
+            txtLuong.Text = row.Cells[7].Value.ToString();
+            cboPhongBan.Text = row.Cells[8].Value.ToString();
         }
     }
 }
