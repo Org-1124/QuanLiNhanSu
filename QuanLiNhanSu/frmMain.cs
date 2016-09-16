@@ -51,6 +51,16 @@ namespace QuanLiNhanSu
         private void btnLuu_Click(object sender, EventArgs e)
         {
             btnLuu.Visible = false;
+            NhanVienDTO nv = new NhanVienDTO();
+            nv.ChucVu = txtChucVu.Text;
+            nv.HoTen = txtHoTen.Text;
+           
+            nv.NgaySinh = dtpNgaySinh.Value;
+            if (rdbNam.Checked == true)
+                nv.GioiTinh = "Nam";
+            else
+                nv.GioiTinh = "Nu";
+
         }
 
         private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -67,7 +77,7 @@ namespace QuanLiNhanSu
             }
             else
             {
-                rdbNu.Checked = false;
+                rdbNu.Checked = true;
             }
             txtQueQuan.Text = row.Cells[4].Value.ToString();
             txtChucVu.Text = row.Cells[5].Value.ToString();
