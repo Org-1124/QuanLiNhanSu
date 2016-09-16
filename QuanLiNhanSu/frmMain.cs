@@ -69,13 +69,8 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgaySinh.Value = dt;
-<<<<<<< HEAD
 
             }
-
-=======
-            }
->>>>>>> refs/remotes/origin/tuananh
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if (dr.Cells["GioiTinh"].Value.ToString().ToUpper() == "NAM")
@@ -87,7 +82,6 @@ namespace QuanLiNhanSu
                 rdbNu.Checked = true;
             }
         }
-
         private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -124,10 +118,8 @@ namespace QuanLiNhanSu
 
         public void ReadOnly1()
         {
-<<<<<<< HEAD
             FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
             frm.ShowDialog();
-=======
             txtChucVu.ReadOnly = true;
             txtHoTen.ReadOnly = true;
             txtIDNhanVien.ReadOnly = true;
@@ -138,7 +130,6 @@ namespace QuanLiNhanSu
             cboQuanLi.Enabled = false;
             rdbNam.Enabled = false;
             rdbNu.Enabled = false;
->>>>>>> refs/remotes/origin/tuananh
         }
     }
 }
