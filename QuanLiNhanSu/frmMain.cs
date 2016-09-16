@@ -81,11 +81,6 @@ namespace QuanLiNhanSu
             }
         }
 
-        private void btnLuu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
 
@@ -104,6 +99,30 @@ namespace QuanLiNhanSu
         private void txtChucVu_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dgvNhanVien.Rows[e.RowIndex];
+            txtIDNhanVien.Text = row.Cells[0].Value.ToString();
+            txtHoTen.Text = row.Cells[1].Value.ToString();
+            dtpNgaySinh.Text = row.Cells[2].Value.ToString();
+            if(row.Cells[3].Value.ToString()=="nam" || row.Cells[3].Value.ToString()=="Nam")
+            {
+                rdbNam.Checked = true;
+              
+            }
+            else
+            {
+                rdbNu.Checked = false;
+            }
+            txtQueQuan.Text = row.Cells[4].Value.ToString();
+            txtChucVu.Text = row.Cells[5].Value.ToString();
+            cboQuanLi.Text = row.Cells[6].Value.ToString();
+            txtLuong.Text = row.Cells[7].Value.ToString();
+            cboPhongBan.Text = row.Cells[8].Value.ToString();
         }
     }
 }

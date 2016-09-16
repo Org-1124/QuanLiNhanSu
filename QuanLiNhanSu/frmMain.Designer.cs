@@ -49,7 +49,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnLuu = new System.Windows.Forms.GroupBox();
+            this.groupbox = new System.Windows.Forms.GroupBox();
             this.cboPhongBan = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtLuong = new System.Windows.Forms.TextBox();
@@ -79,12 +79,11 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.btnLuu.SuspendLayout();
+            this.groupbox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -235,36 +234,35 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnLuu
+            // groupbox
             // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnLuu.Controls.Add(this.cboPhongBan);
-            this.btnLuu.Controls.Add(this.label9);
-            this.btnLuu.Controls.Add(this.txtLuong);
-            this.btnLuu.Controls.Add(this.label8);
-            this.btnLuu.Controls.Add(this.cboQuanLi);
-            this.btnLuu.Controls.Add(this.label7);
-            this.btnLuu.Controls.Add(this.txtChucVu);
-            this.btnLuu.Controls.Add(this.label6);
-            this.btnLuu.Controls.Add(this.rdbNu);
-            this.btnLuu.Controls.Add(this.label5);
-            this.btnLuu.Controls.Add(this.rdbNam);
-            this.btnLuu.Controls.Add(this.txtQueQuan);
-            this.btnLuu.Controls.Add(this.label4);
-            this.btnLuu.Controls.Add(this.dtpNgaySinh);
-            this.btnLuu.Controls.Add(this.label3);
-            this.btnLuu.Controls.Add(this.txtHoTen);
-            this.btnLuu.Controls.Add(this.label2);
-            this.btnLuu.Controls.Add(this.label1);
-            this.btnLuu.Controls.Add(this.txtIDNhanVien);
-            this.btnLuu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLuu.Location = new System.Drawing.Point(0, 24);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(954, 220);
-            this.btnLuu.TabIndex = 2;
-            this.btnLuu.TabStop = false;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Enter += new System.EventHandler(this.btnLuu_Enter);
+            this.groupbox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.groupbox.Controls.Add(this.cboPhongBan);
+            this.groupbox.Controls.Add(this.label9);
+            this.groupbox.Controls.Add(this.txtLuong);
+            this.groupbox.Controls.Add(this.label8);
+            this.groupbox.Controls.Add(this.cboQuanLi);
+            this.groupbox.Controls.Add(this.label7);
+            this.groupbox.Controls.Add(this.txtChucVu);
+            this.groupbox.Controls.Add(this.label6);
+            this.groupbox.Controls.Add(this.rdbNu);
+            this.groupbox.Controls.Add(this.label5);
+            this.groupbox.Controls.Add(this.rdbNam);
+            this.groupbox.Controls.Add(this.txtQueQuan);
+            this.groupbox.Controls.Add(this.label4);
+            this.groupbox.Controls.Add(this.dtpNgaySinh);
+            this.groupbox.Controls.Add(this.label3);
+            this.groupbox.Controls.Add(this.txtHoTen);
+            this.groupbox.Controls.Add(this.label2);
+            this.groupbox.Controls.Add(this.label1);
+            this.groupbox.Controls.Add(this.txtIDNhanVien);
+            this.groupbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupbox.Location = new System.Drawing.Point(0, 24);
+            this.groupbox.Name = "groupbox";
+            this.groupbox.Size = new System.Drawing.Size(954, 229);
+            this.groupbox.TabIndex = 10;
+            this.groupbox.TabStop = false;
+            this.groupbox.Text = "Nhân viên";
             // 
             // cboPhongBan
             // 
@@ -444,9 +442,9 @@
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 244);
+            this.groupBox2.Location = new System.Drawing.Point(0, 253);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(954, 279);
+            this.groupBox2.Size = new System.Drawing.Size(954, 270);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách nhân viên";
@@ -457,7 +455,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(948, 229);
+            this.panel2.Size = new System.Drawing.Size(948, 220);
             this.panel2.TabIndex = 2;
             // 
             // dgvNhanVien
@@ -482,14 +480,14 @@
             this.dgvNhanVien.RowHeadersVisible = false;
             this.dgvNhanVien.RowTemplate.ReadOnly = true;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(948, 229);
+            this.dgvNhanVien.Size = new System.Drawing.Size(948, 220);
             this.dgvNhanVien.TabIndex = 0;
+            this.dgvNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNhanVien_CellMouseClick);
             this.dgvNhanVien.Click += new System.EventHandler(this.dgvNhanVien_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Controls.Add(this.label10);
@@ -557,23 +555,13 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(670, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 31);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 548);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.groupbox);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -586,8 +574,8 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.btnLuu.ResumeLayout(false);
-            this.btnLuu.PerformLayout();
+            this.groupbox.ResumeLayout(false);
+            this.groupbox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
@@ -618,7 +606,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.GroupBox btnLuu;
+        private System.Windows.Forms.GroupBox groupbox;
         private System.Windows.Forms.ComboBox cboPhongBan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLuong;
@@ -648,7 +636,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button button1;
     }
 }
 
