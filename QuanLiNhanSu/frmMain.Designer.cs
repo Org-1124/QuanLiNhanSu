@@ -73,6 +73,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -129,7 +130,7 @@
             this.xóaTàiKhoảnToolStripMenuItem,
             this.đổiMậtKhẩuToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // thêmTàiKhoảnToolStripMenuItem
@@ -486,6 +487,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Controls.Add(this.label10);
@@ -497,6 +499,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 31);
             this.panel1.TabIndex = 1;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLuu.Location = new System.Drawing.Point(660, 0);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 31);
+            this.btnLuu.TabIndex = 10;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // button4
             // 
@@ -534,6 +547,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -544,6 +558,7 @@
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -554,6 +569,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmMain
             // 
@@ -636,6 +652,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnLuu;
     }
 }
 
