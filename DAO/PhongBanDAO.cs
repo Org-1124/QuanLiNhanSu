@@ -65,7 +65,9 @@ namespace DAO
             try
             {
                 con = DataProvider.KetNoi();
-                string sTruyVan = string.Format("Delete tblPhongBan x where x.IDPhong={0} and Delete tblNhanVien a where a.IDPhong={1}", pb.IdPhong,pb.IdPhong);
+                string s = string.Format("delete tblNhanVien where IDPhong={0}",pb.IdPhong);
+                DataProvider.ThucThiTruyVan(s, con);
+                string sTruyVan = string.Format("Delete tblPhongBan where IDPhong={0}", pb.IdPhong);
                 DataProvider.ThucThiTruyVan(sTruyVan, con);
                 DataProvider.DongKetNoi(con);
                 return true;
