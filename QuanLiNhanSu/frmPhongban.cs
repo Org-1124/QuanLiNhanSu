@@ -12,6 +12,7 @@ namespace QuanLiNhanSu
 {
     public partial class frmPhongban : Form
     {
+        int luu = 0;
         public frmPhongban()
         {
             InitializeComponent();
@@ -67,6 +68,64 @@ namespace QuanLiNhanSu
             catch
             { 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button5.Visible = true;
+            txtIDPhong.ReadOnly = false;
+            txtTenPhong.ReadOnly = false;
+            cboTentruongphong.Enabled = true;
+            dtpNgayNhanChuc.Enabled = true;
+            DataTable maxid = new DataTable();
+            maxid = PhongBanDAO.ID_PBMax();
+            int idpb = (int)maxid.Rows[0][0];
+            idpb++;
+            txtIDPhong.Text = idpb.ToString();
+            txtTenPhong.Focus();
+            luu = 2;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button5.Visible = false;
+            txtIDPhong.ReadOnly = true;
+            txtTenPhong.ReadOnly = true;
+            cboTentruongphong.Enabled = false;
+            dtpNgayNhanChuc.Enabled = false;
+            PhongBanDTO pb = new PhongBanDTO();
+            pb.IdPhong =int.Parse(txtIDPhong.Text);   
+            pb.TenPhong = txtTenPhong.Text;
+           /*
+            if (ktluu == 1)
+            {
+                try
+                {
+                    NhanVienDAO.SuaNV(nv);
+                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+                    MessageBox.Show("Bạn đã sửa thành công");
+                    ReadOnly1();
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi chưa sửa được");
+                }
+            }
+            if (ktluu == 2)
+            {
+                try
+                {
+                    NhanVienDAO.ThemNV(nv);
+                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+                    ReadOnly1();
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn chưa thêm được");
+                }
+            }
+            btnLuu.Visible = false;
+            luu = 0;*/
         }
         
     }

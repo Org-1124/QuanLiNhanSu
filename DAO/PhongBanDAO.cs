@@ -19,7 +19,14 @@ namespace DAO
             DataProvider.DongKetNoi(con);
             return dt;
         }
-
+        public static DataTable ID_PBMax()
+        {
+            string sTruyVan = "select max(IDPhong) from tblPhongBan";
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
         public static bool ThemPB(PhongBanDTO pb)
         {
             try
