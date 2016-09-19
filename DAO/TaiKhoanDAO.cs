@@ -20,16 +20,6 @@ namespace DAO
             return dt;
         }
 
-        public static DataTable HienThiYeuCauTK(string a)
-        {
-            string sTruyVan = "select * from tblTaiKhoan where TenDangNhap=";
-            sTruyVan += a;
-            con = DataProvider.KetNoi();
-            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
-            DataProvider.DongKetNoi(con);
-            return dt;
-        }
-
         public static bool ThemTK(TaiKhoanDTO tk)
         {
             try
