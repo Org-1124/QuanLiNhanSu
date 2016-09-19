@@ -147,6 +147,10 @@ namespace QuanLiNhanSu
                 txtIDNhanVien.ReadOnly = true;
                 txtLuong.ReadOnly = false;
                 txtQueQuan.ReadOnly = false;
+                cboPhongBan.Enabled = true;
+                cboQuanLi.Enabled = true;
+                rdbNam.Enabled = true;
+                rdbNu.Enabled = true;
                 ktluu=1;
             }    
         }
@@ -159,7 +163,7 @@ namespace QuanLiNhanSu
             if (rdbNam.Checked == true)
                 nv.GioiTinh = "Nam";
             else
-                nv.GioiTinh = "Nu";
+                nv.GioiTinh = "Nữ";
             //int idnv = 0;
            // int.TryParse(txtIDNhanVien.ToString(), out idnv);
            // nv.IDNhanVien = idnv;
