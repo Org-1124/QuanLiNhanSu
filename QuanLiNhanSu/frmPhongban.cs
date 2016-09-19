@@ -43,6 +43,11 @@ namespace QuanLiNhanSu
         */
         private void dgvPhongban_Click(object sender, EventArgs e)
         {
+            luu = 0;
+            button5.Visible = false;
+            txtTenPhong.ReadOnly = true;
+            cboTentruongphong.Enabled = false;
+            dtpNgayNhanChuc.Enabled = false;
             DataGridViewRow dr = dgvPhongban.SelectedRows[0];
             txtIDPhong.Text = dr.Cells["IDPhong"].Value.ToString();
             txtTenPhong.Text = dr.Cells["TenPhong"].Value.ToString();
@@ -59,11 +64,10 @@ namespace QuanLiNhanSu
             }
             try
             {
-
                 cboTentruongphong.DataSource = NhanVienDAO.LayThongTinNhanVien_1((int)dr.Cells["IDPhong"].Value);
                 cboTentruongphong.ValueMember = "IDNhanVien";
                 cboTentruongphong.DisplayMember = "HoTen";
-                cboTentruongphong.SelectedValue = (int?)dr.Cells["IDTruongPhong"].Value;
+                cboTentruongphong.SelectedValue = (int)dr.Cells["IDTruongPhong"].Value;
             }
             catch
             { 
@@ -73,7 +77,6 @@ namespace QuanLiNhanSu
         private void button2_Click(object sender, EventArgs e)
         {
             button5.Visible = true;
-            txtIDPhong.ReadOnly = false;
             txtTenPhong.ReadOnly = false;
             cboTentruongphong.Enabled = true;
             dtpNgayNhanChuc.Enabled = true;
@@ -83,50 +86,83 @@ namespace QuanLiNhanSu
             idpb++;
             txtIDPhong.Text = idpb.ToString();
             txtTenPhong.Focus();
+            cboTentruongphong.DataSource = NhanVienDAO.LoadDataNV();
+            cboTentruongphong.ValueMember = "IDNhanVien";
+            cboTentruongphong.DisplayMember = "HoTen";
             luu = 2;
         }
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtIDPhong.Text == "")
+                MessageBox.Show("Bạn chưa chọn dữ liệu");
+            else
+            {
+                button5.Visible = true;
+                txtTenPhong.ReadOnly = false;
+                txtTenPhong.Focus();
+                cboTentruongphong.Enabled = true;
+                dtpNgayNhanChuc.Enabled = true;
+                cboTentruongphong.DataSource = NhanVienDAO.LoadDataNV();
+                cboTentruongphong.ValueMember = "IDNhanVien";
+                cboTentruongphong.DisplayMember = "HoTen";
+                luu = 1;
+            }
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             button5.Visible = false;
-            txtIDPhong.ReadOnly = true;
             txtTenPhong.ReadOnly = true;
             cboTentruongphong.Enabled = false;
             dtpNgayNhanChuc.Enabled = false;
             PhongBanDTO pb = new PhongBanDTO();
             pb.IdPhong =int.Parse(txtIDPhong.Text);   
             pb.TenPhong = txtTenPhong.Text;
-           /*
-            if (ktluu == 1)
+            pb.IdTruongPhong = (int)cboTentruongphong.SelectedValue;
+            pb.NgayNhanChuc = dtpNgayNhanChuc.Value;
+            if (luu == 1)
             {
                 try
                 {
-                    NhanVienDAO.SuaNV(nv);
-                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+                    PhongBanDAO.SuaPB(pb);
+                    dgvPhongban.DataSource = PhongBanDAO.LoadDataPB();
                     MessageBox.Show("Bạn đã sửa thành công");
-                    ReadOnly1();
                 }
                 catch
                 {
                     MessageBox.Show("Lỗi chưa sửa được");
                 }
             }
-            if (ktluu == 2)
+            if (luu == 2)
             {
                 try
                 {
-                    NhanVienDAO.ThemNV(nv);
-                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
-                    ReadOnly1();
+                    PhongBanDAO.ThemPB(pb);
+                    dgvPhongban.DataSource = PhongBanDAO.LoadDataPB();
+                    MessageBox.Show("Bạn đã lưu thành công");
                 }
                 catch
                 {
                     MessageBox.Show("Bạn chưa thêm được");
                 }
             }
-            btnLuu.Visible = false;
-            luu = 0;*/
+            luu = 0;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtIDPhong.Text == "")
+                MessageBox.Show("Bạn chưa chọn phòng ban");
+            else
+            {
+                PhongBanDTO pb = new PhongBanDTO();
+                pb.IdPhong = int.Parse(txtIDPhong.Text);
+                PhongBanDAO.XoaPB(pb);
+                MessageBox.Show("Bạn đã xóa phòng ban thành công");
+                dgvPhongban.DataSource = PhongBanDAO.LoadDataPB();
+            }
+        }
+
+       
         
     }
 }
