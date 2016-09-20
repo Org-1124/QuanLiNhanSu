@@ -34,6 +34,8 @@ namespace DAO
                 string sTruyVan = string.Format("Insert into tblPhongBan(IDPhong,TenPhong,IDTruongPhong,NgayNhanChuc) values ({0},N'{1}',{2},'{3}')", pb.IdPhong, pb.TenPhong, pb.IdTruongPhong, pb.NgayNhanChuc);
                 con = DataProvider.KetNoi();
                 DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+                string s = string.Format("Update tblnhanvien set idphong = {0},chucvu=N'trưởng phòng' where IDnhanvien={1}", pb.IdPhong, pb.IdTruongPhong);
+                DataProvider.ThucThiTruyVan(s, con);
                 DataProvider.DongKetNoi(con);
                 return true;
             }

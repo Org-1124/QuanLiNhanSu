@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgayNhanChuc = new System.Windows.Forms.DateTimePicker();
             this.cboTentruongphong = new System.Windows.Forms.ComboBox();
@@ -77,9 +77,10 @@
             this.dtpNgayNhanChuc.Location = new System.Drawing.Point(775, 39);
             this.dtpNgayNhanChuc.MaxDate = new System.DateTime(9998, 12, 30, 0, 0, 0, 0);
             this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
+            this.dtpNgayNhanChuc.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNgayNhanChuc.Size = new System.Drawing.Size(156, 20);
             this.dtpNgayNhanChuc.TabIndex = 8;
-            this.dtpNgayNhanChuc.Value = new System.DateTime(2016, 9, 20, 14, 23, 18, 0);
+            this.dtpNgayNhanChuc.Value = new System.DateTime(2016, 9, 20, 0, 0, 0, 0);
             // 
             // cboTentruongphong
             // 
@@ -233,14 +234,14 @@
             this.dgvPhongban.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPhongban.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvPhongban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhongban.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhongban.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongban.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPhongban.Location = new System.Drawing.Point(3, 37);
             this.dgvPhongban.MultiSelect = false;

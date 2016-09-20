@@ -117,7 +117,7 @@ namespace QuanLiNhanSu
             pb.IdPhong =int.Parse(txtIDPhong.Text);   
             pb.TenPhong = txtTenPhong.Text;
             pb.IdTruongPhong = (int)cboTentruongphong.SelectedValue;
-            pb.NgayNhanChuc = dtpNgayNhanChuc.Value;
+            pb.NgayNhanChuc = dtpNgayNhanChuc.Value.ToShortDateString();
             if (luu == 1)
             {
                 try
