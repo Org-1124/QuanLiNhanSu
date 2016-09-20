@@ -49,7 +49,9 @@ namespace DAO
             try
             {
                 con = DataProvider.KetNoi();
-                string sTruyVan = string.Format("Update tblPhongBan set TenPhong = N'{0}',IDTruongPhong={1},NgayNhanChuc = '{2}' where IDPhong={3}", pb.TenPhong, pb.IdTruongPhong, pb.NgayNhanChuc, pb.IdPhong);
+                string s = string.Format("Update tblnhanvien set idphong = {0},chucvu=N'trưởng phòng' where IDnhanvien={1}",pb.IdPhong, pb.IdTruongPhong);
+                DataProvider.ThucThiTruyVan(s, con);
+                string sTruyVan = string.Format("Update tblPhongBan set TenPhong = N'{0}',IDTruongPhong={1},NgayNhanChuc='{2}' where IDPhong={3}", pb.TenPhong, pb.IdTruongPhong, pb.NgayNhanChuc, pb.IdPhong);
                 DataProvider.ThucThiTruyVan(sTruyVan, con);
                 DataProvider.DongKetNoi(con);
                 return true;

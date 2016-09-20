@@ -75,9 +75,11 @@
             this.dtpNgayNhanChuc.Enabled = false;
             this.dtpNgayNhanChuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayNhanChuc.Location = new System.Drawing.Point(775, 39);
+            this.dtpNgayNhanChuc.MaxDate = new System.DateTime(9998, 12, 30, 0, 0, 0, 0);
             this.dtpNgayNhanChuc.Name = "dtpNgayNhanChuc";
             this.dtpNgayNhanChuc.Size = new System.Drawing.Size(156, 20);
             this.dtpNgayNhanChuc.TabIndex = 8;
+            this.dtpNgayNhanChuc.Value = new System.DateTime(2016, 9, 20, 14, 23, 18, 0);
             // 
             // cboTentruongphong
             // 

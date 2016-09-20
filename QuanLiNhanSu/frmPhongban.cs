@@ -60,7 +60,6 @@ namespace QuanLiNhanSu
             else
             {
                 dtpNgayNhanChuc.Value = dt;
-
             }
             try
             {
