@@ -49,7 +49,7 @@ namespace DAO
             try
             {
                 con = DataProvider.KetNoi();
-                string sTruyVan = string.Format("Update tblPhongBan set TenPhong = N'{0}',IDTruongPhong={1},NgayNhanChuc = '{2}' where IDNhanVien={3}", pb.TenPhong, pb.IdTruongPhong, pb.NgayNhanChuc, pb.IdPhong);
+                string sTruyVan = string.Format("Update tblPhongBan set TenPhong = N'{0}',IDTruongPhong={1},NgayNhanChuc = '{2}' where IDPhong={3}", pb.TenPhong, pb.IdTruongPhong, pb.NgayNhanChuc, pb.IdPhong);
                 DataProvider.ThucThiTruyVan(sTruyVan, con);
                 DataProvider.DongKetNoi(con);
                 return true;
@@ -76,6 +76,14 @@ namespace DAO
             {
                 return false;
             }
+        }
+        public static DataTable SearchPB(string tim)
+        {
+            string sTruyVan = "select a.IDPhong, a.TenPhong, b.IDNhanVien, a.NgayNhanChuc from  tblPhongBan a, tblNhanVien b where a.IDTruongPhong =b.IDNhanVien and (a.TenPhong like N'%" + tim + "%' or a.idphong =" + tim + " or a.NgayNhanChuc ='%"+tim+"%')";
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
         }
     }
 }

@@ -44,7 +44,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txttimpb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvPhongban = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -147,7 +147,7 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txttimpb);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dgvPhongban);
             this.groupBox2.Location = new System.Drawing.Point(2, 258);
@@ -206,13 +206,15 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox5
+            // txttimpb
             // 
-            this.textBox5.Location = new System.Drawing.Point(155, 13);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(213, 20);
-            this.textBox5.TabIndex = 2;
+            this.txttimpb.Location = new System.Drawing.Point(155, 13);
+            this.txttimpb.Name = "txttimpb";
+            this.txttimpb.Size = new System.Drawing.Size(213, 20);
+            this.txttimpb.TabIndex = 2;
+            this.txttimpb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimpb_KeyDown);
             // 
             // label5
             // 
@@ -278,7 +280,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txttimpb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

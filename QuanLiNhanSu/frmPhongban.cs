@@ -162,7 +162,18 @@ namespace QuanLiNhanSu
             }
         }
 
-       
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvPhongban.DataSource = PhongBanDAO.SearchPB(txttimpb.Text);
+        }
+
+        private void txttimpb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dgvPhongban.DataSource = PhongBanDAO.SearchPB(txttimpb.Text);
+                
+            }
+        }
     }
 }
