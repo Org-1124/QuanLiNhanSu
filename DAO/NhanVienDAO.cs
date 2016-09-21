@@ -24,7 +24,7 @@ namespace DAO
         {
             try
             {
-                string sTruyVan = string.Format("Insert into tblNhanVien(IDNhanVien,HoTen,NgaySinh,GioiTinh,QueQuan,ChucVu,IDQuanLy,Luong,IDPhong) values ({0},N'{1}','{2}',N'{3}',N'{4}',N'{5}',{6},{7},{8})", nv.IDNhanVien, nv.HoTen, nv.NgaySinh, nv.GioiTinh, nv.QueQuan, nv.ChucVu, nv.IDQuanLi, nv.Luong, nv.IdPhong);
+                string sTruyVan = string.Format("Insert into tblNhanVien(IDNhanVien,HoTen,NgaySinh,GioiTinh,QueQuan,ChucVu,IDQuanLi,Luong,IDPhong) values ({0},N'{1}','{2}',N'{3}',N'{4}',N'{5}',{6},{7},{8})", nv.IDNhanVien, nv.HoTen, nv.NgaySinh, nv.GioiTinh, nv.QueQuan, nv.ChucVu, nv.IDQuanLi, nv.Luong, nv.IdPhong);
                 con = DataProvider.KetNoi();
                 DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
                 DataProvider.DongKetNoi(con);
