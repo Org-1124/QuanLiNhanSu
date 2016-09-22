@@ -31,5 +31,6 @@ namespace DAO
             SqlCommand com = new SqlCommand(sTruyVan, con);
             com.ExecuteNonQuery();
         }
+
     }
 }
