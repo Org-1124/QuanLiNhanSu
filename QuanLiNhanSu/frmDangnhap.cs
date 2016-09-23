@@ -59,10 +59,9 @@ namespace QuanLiNhanSu
            if (DangNhapKVC(txtUser.Text, txtPassword.Text) == true)
             {
                 MessageBox.Show("Đăng nhập thành công !", "Thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmPhongban frm = new frmPhongban();
+                frm.ShowDialog();
               //if(DialogResult.OK==MessageBox.Show())
-
-                frmMain FormMain = new frmMain();
-                FormMain.ShowDialog();
                 //this.MdiParent = this;
               //  this.DialogResult = DialogResult.OK;
                 //this.Close();

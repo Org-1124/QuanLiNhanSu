@@ -44,7 +44,7 @@ namespace QuanLiNhanSu
         private void dgvPhongban_Click(object sender, EventArgs e)
         {
             luu = 0;
-            button5.Visible = false;
+            btnLuu.Visible = false;
             txtTenPhong.ReadOnly = true;
             cboTentruongphong.Enabled = false;
             dtpNgayNhanChuc.Enabled = false;
@@ -73,9 +73,9 @@ namespace QuanLiNhanSu
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            button5.Visible = true;
+            btnLuu.Visible = true;
             txtTenPhong.Text = "";
             cboTentruongphong.Text = "";
             txtIDPhong.Text = "";
@@ -93,13 +93,13 @@ namespace QuanLiNhanSu
             cboTentruongphong.DisplayMember = "HoTen";
             luu = 2;
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             if (txtIDPhong.Text == "")
                 MessageBox.Show("Bạn chưa chọn dữ liệu");
             else
             {
-                button5.Visible = true;
+                btnLuu.Visible = true;
                 txtTenPhong.ReadOnly = false;
                 txtTenPhong.Focus();
                 cboTentruongphong.Enabled = true;
@@ -110,9 +110,9 @@ namespace QuanLiNhanSu
                 luu = 1;
             }
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            button5.Visible = false;
+            btnLuu.Visible = false;
             txtTenPhong.ReadOnly = true;
             cboTentruongphong.Enabled = false;
             dtpNgayNhanChuc.Enabled = false;
@@ -150,7 +150,7 @@ namespace QuanLiNhanSu
             luu = 0;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (txtIDPhong.Text == "")
                 MessageBox.Show("Bạn chưa chọn phòng ban");
@@ -164,7 +164,7 @@ namespace QuanLiNhanSu
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTim_Click(object sender, EventArgs e)
         {
             dgvPhongban.DataSource = PhongBanDAO.SearchPB(txttimpb.Text);
         }
