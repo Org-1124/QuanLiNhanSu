@@ -28,9 +28,9 @@ namespace DTO
             get { return _idTruongPhong; }
             set { _idTruongPhong = value; }
         }
-        private DateTime _ngayNhanChuc;
+        private string _ngayNhanChuc;
 
-        public DateTime NgayNhanChuc
+        public string NgayNhanChuc
         {
             get { return _ngayNhanChuc; }
             set { _ngayNhanChuc = value; }

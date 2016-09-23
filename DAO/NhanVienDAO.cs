@@ -20,6 +20,27 @@ namespace DAO
             return dt;
         }
 
+
+        public static DataTable LoadDataNVTruongPhong()
+        {
+            string sTruyVan = "select a.HoTen, b.IDPhong from tblNhanVien a, tblPhongBan b where b.IDTruongPhong = a.IDNhanVien";
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
+
+        public static DataTable HienThiYeuCau(string a)
+        {
+            string sTruyVan = "select * from tblNhanVien where idNhanVien=";
+            sTruyVan += a;
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
+
+
         public static bool ThemNV(NhanVienDTO nv)
         {
             try
@@ -90,6 +111,15 @@ namespace DAO
         public static DataTable ID_NVMax()
         {
             string sTruyVan = "select max(IDNhanVien) from tblNhanVien";
+            con = DataProvider.KetNoi();
+            DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
+            DataProvider.DongKetNoi(con);
+            return dt;
+        }
+
+        public static DataTable LayThongTinNhanVien_1(int IDPhong)
+        {
+            string sTruyVan = string.Format("Select * From tblNhanVien a, tblPhongBan b where b.IDPhong= '{0}' and a.IDPhong = b.IDPhong ", IDPhong);
             con = DataProvider.KetNoi();
             DataTable dt = DataProvider.LayDataTable(sTruyVan, con);
             DataProvider.DongKetNoi(con);

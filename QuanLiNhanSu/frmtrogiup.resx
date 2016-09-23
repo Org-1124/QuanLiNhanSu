@@ -117,38 +117,89 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Sau khi đăng nhập bạn sẽ nhìn thấy giao diện sau:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Để xem thông tin nhân viên, bạn bấm chuột trái vào dòng chứa tên nhân viên đó trong vùng danh sách nhân viên
+Ví dụ: Xem thông tin nhân viên có "Mã nhân viên" là 4
+           Bấm chuột trái vào thì dòng nhân viên có "Mã nhân viên" là 4 sẽ được tô màu và tất cả thông tin của nhân viên đó sẽ hiện lên trên các ô dữ liệu bên trên
+
+</value>
   </data>
-  <data name="e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox6.Text" xml:space="preserve">
+    <value>Để xem thông tin các phòng ban, bạn chọn vào "Phòng ban" nằm trên thanh công cụ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bạn sẽ nhìn thấy giao diện như bên dưới, các thao tác thêm sửa xóa tìm kiếm tương tự như với quản lý danh sách nhân viên
+</value>
   </data>
-  <data name="d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox5.Text" xml:space="preserve">
+    <value>Để tìm nhân viên trong danh sách bạn có thể nhập tên hoặc một số thông tin khác vào ô tìm kiếm 
+rồi sau đó nhấn nút tìm kiếm, nhân viên bạn cần tìm sẽ hiện ra
+Ví dụ: Tìm kiếm các nhân viên là trưởng phòng
+</value>
   </data>
-  <data name="g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox4.Text" xml:space="preserve">
+    <value>Để thêm một nhân viên bạn click chuột trái vào nút "thêm" thì nút "lưu" sẽ hiện lên và các ô text sẽ mở cho phép bạn nhập dữ liệu vào
+Bạn điền các thông tin cần thiết vào các ô text phía trên, xong bấm nút "lưu" thông tin bạn thêm sẽ được lưu lại
+</value>
   </data>
-  <data name="f" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\f.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="i" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="h" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="c" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="e1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\e1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBox3.Text" xml:space="preserve">
+    <value>Để sửa một nhân viên trước tiên bạn phải chọn vào dữ liệu nhân viên đó
+ (xem hướng dẫn xem thông tin nhân viên)
+sau đó bạn click chuột trái vào nút "sửa" thì nút "lưu" sẽ hiện lên và các ô text sẽ mở cho phép bạn nhập dữ liệu vào
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Khi bạn sửa xong thì bấm nút "lưu" thông tin bạn chỉnh sửa sẽ được lưu lại
+</value>
   </data>
 </root>

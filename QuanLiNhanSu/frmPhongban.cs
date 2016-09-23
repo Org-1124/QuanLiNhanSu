@@ -76,6 +76,9 @@ namespace QuanLiNhanSu
         private void button2_Click(object sender, EventArgs e)
         {
             button5.Visible = true;
+            txtTenPhong.Text = "";
+            cboTentruongphong.Text = "";
+            txtIDPhong.Text = "";
             txtTenPhong.ReadOnly = false;
             cboTentruongphong.Enabled = true;
             dtpNgayNhanChuc.Enabled = true;
