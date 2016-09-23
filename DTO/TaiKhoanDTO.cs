@@ -22,5 +22,6 @@ namespace DTO
             get { return _matKhau; }
             set { _matKhau = value; }
         }
+
     }
 }
