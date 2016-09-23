@@ -11,11 +11,14 @@ using DAO;
 using DTO;
 namespace QuanLiNhanSu
 {
+   
     public partial class frmMain : Form
     {
+        int ktluu = 0;
         public frmMain()
         {
             InitializeComponent();
+            btnLuu.Visible = false;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -71,7 +74,6 @@ namespace QuanLiNhanSu
                 dtpNgaySinh.Value = dt;
 
             }
-
             cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
             cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
             if (dr.Cells["GioiTinh"].Value.ToString().ToUpper() == "NAM")
@@ -132,10 +134,113 @@ namespace QuanLiNhanSu
             rdbNu.Enabled = false;
         }
 
-        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            frmPhongban frmPhongban = new frmPhongban();
-            frmPhongban.ShowDialog();
+            if (txtIDNhanVien.Text == "")
+                MessageBox.Show("Bạn chưa chọn dữ liệu");
+            else
+            {
+                btnLuu.Visible = true;
+                txtChucVu.ReadOnly = false;
+                txtHoTen.ReadOnly = false;
+                txtHoTen.Focus();
+                txtIDNhanVien.ReadOnly = true;
+                txtLuong.ReadOnly = false;
+                txtQueQuan.ReadOnly = false;
+                cboPhongBan.Enabled = true;
+                cboQuanLi.Enabled = true;
+                rdbNam.Enabled = true;
+                rdbNu.Enabled = true;
+                ktluu=1;
+            }    
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            NhanVienDTO nv = new NhanVienDTO();
+            nv.ChucVu = txtChucVu.Text.ToString();
+            nv.HoTen = txtHoTen.Text.ToString();
+            if (rdbNam.Checked == true)
+                nv.GioiTinh = "Nam";
+            else
+                nv.GioiTinh = "Nữ";
+            //int idnv = 0;
+           // int.TryParse(txtIDNhanVien.ToString(), out idnv);
+           // nv.IDNhanVien = idnv;
+            nv.IDNhanVien = int.Parse(txtIDNhanVien.Text);
+            int luong=0;
+            int.TryParse(txtLuong.Text.ToString(), out luong);
+            nv.Luong = luong;
+            nv.IdPhong = (int)cboPhongBan.SelectedValue;
+            nv.IDQuanLi = (int)cboQuanLi.SelectedValue;
+            nv.NgaySinh = dtpNgaySinh.Value;
+            nv.QueQuan = txtQueQuan.Text.ToString();
+            if(ktluu==1)
+            {
+                try
+                {
+                    NhanVienDAO.SuaNV(nv);
+                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+                    MessageBox.Show("Bạn đã sửa thành công");
+                    ReadOnly1();
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi chưa sửa được");
+                }
+            }
+            if (ktluu == 2)
+            {
+                try
+                {
+                    NhanVienDAO.ThemNV(nv);
+                    dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+                    ReadOnly1();
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn chưa thêm được");
+                }
+            }
+            btnLuu.Visible = false;
+            ktluu = 0;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            btnLuu.Visible = true;
+            DataTable maxid = new DataTable();
+            maxid = NhanVienDAO.ID_NVMax();
+            int idnv = (int)maxid.Rows[0][0];
+            idnv++;
+            txtIDNhanVien.Text = idnv.ToString();
+            txtChucVu.ReadOnly = false;
+            txtHoTen.ReadOnly = false;
+            txtHoTen.Focus();
+            txtIDNhanVien.ReadOnly = true;
+            txtLuong.ReadOnly = false;
+            txtQueQuan.ReadOnly = false;
+            cboPhongBan.Enabled = true;
+            dtpNgaySinh.Enabled = true;
+            cboQuanLi.Enabled = true;
+            rdbNam.Enabled = true;
+            rdbNu.Enabled = true;
+            ktluu = 2;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (txtIDNhanVien.Text == "")
+                MessageBox.Show("Bạn chưa chọn nhân viên");
+            else
+            {
+                NhanVienDTO nv = new NhanVienDTO();
+                nv.IDNhanVien = int.Parse(txtIDNhanVien.Text.ToString());
+                NhanVienDAO.XoaNV(nv);
+                ReadOnly1();
+                MessageBox.Show("Bạn đã xóa nhân viên thành công");
+                dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
+            }
         }
     }
 }

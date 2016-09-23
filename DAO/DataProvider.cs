@@ -10,7 +10,7 @@ namespace DAO
     {
         public static SqlConnection KetNoi()
         {
-            string sChuoi = @"Data Source=.;Initial Catalog=QuanLiNhanSu;Integrated Security=True";
+            string sChuoi = @"Data Source=.\TUNGNTDEV;Initial Catalog=QuanLiNhanSu;Integrated Security=True";
             SqlConnection con = new SqlConnection(sChuoi);
             con.Open();
             return con;
@@ -31,6 +31,5 @@ namespace DAO
             SqlCommand com = new SqlCommand(sTruyVan, con);
             com.ExecuteNonQuery();
         }
-
     }
 }
