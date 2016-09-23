@@ -7,9 +7,9 @@ namespace DTO
 {
     public class PhongBanDTO
     {
-        private string _idPhong;
+        private int _idPhong;
 
-        public string IdPhong
+        public int IdPhong
         {
             get { return _idPhong; }
             set { _idPhong = value; }
@@ -21,16 +21,16 @@ namespace DTO
             get { return _tenPhong; }
             set { _tenPhong = value; }
         }
-        private string _idTruongPhong;
+        private int _idTruongPhong;
 
-        public string IdTruongPhong
+        public int IdTruongPhong
         {
             get { return _idTruongPhong; }
             set { _idTruongPhong = value; }
         }
-        private DateTime _ngayNhanChuc;
+        private string _ngayNhanChuc;
 
-        public DateTime NgayNhanChuc
+        public string NgayNhanChuc
         {
             get { return _ngayNhanChuc; }
             set { _ngayNhanChuc = value; }

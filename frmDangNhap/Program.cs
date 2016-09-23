@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLiNhanSu
+namespace frmDangNhap
 {
     static class Program
     {
@@ -15,7 +16,7 @@ namespace QuanLiNhanSu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangnhap());
+            Application.Run(new Form1());
         }
     }
 }
