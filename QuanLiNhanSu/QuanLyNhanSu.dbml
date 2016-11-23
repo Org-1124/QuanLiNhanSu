@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyNhanSu" Class="QuanLyNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="QuanLiNhanSu.Properties.Settings" SettingsPropertyName="QuanLyNhanSuConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="IDNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="QueQuan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="PhongBan_NhanVien" Member="PhongBan" ThisKey="IDPhong" OtherKey="IDPhong" Type="PhongBan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhongBan" Member="PhongBans">
+    <Type Name="PhongBan">
+      <Column Name="IDPhong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDTruongPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PhongBan_NhanVien" Member="NhanViens" ThisKey="IDPhong" OtherKey="IDPhong" Type="NhanVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="IDTaiKhoan" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

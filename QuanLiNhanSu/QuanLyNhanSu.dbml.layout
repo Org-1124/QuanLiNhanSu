@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuanLyNhanSu">
+  <DataContextMoniker Name="/QuanLyNhanSuDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3103b005-8c6b-4e37-873c-05b35b78606c" absoluteBounds="4.875, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/QuanLyNhanSuDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25e02bd2-0480-416f-82aa-b74e88dc2dea" absoluteBounds="4.89, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb67f5e6-33bd-4efb-9f47-e6007e561c10" absoluteBounds="2.25, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QuanLyNhanSuDataContext/PhongBan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="920a5a53-cb81-4e72-b5ba-141faf841209" absoluteBounds="2.265, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 1.81814697265625); (4.875 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyNhanSuDataContext/PhongBan/PhongBan_NhanVien" />
+      <nodes>
+        <classShapeMoniker Id="cb67f5e6-33bd-4efb-9f47-e6007e561c10" />
+        <classShapeMoniker Id="3103b005-8c6b-4e37-873c-05b35b78606c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5c0d1a0b-91ef-4566-9f31-3b09f4405558" absoluteBounds="7.875, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QuanLyNhanSuDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="784e914d-9609-420d-81a8-e72a8ed2ee14" absoluteBounds="7.89, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -6,129 +6,89 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using DAO;
-using DTO;
+
 namespace QuanLiNhanSu
 {
     public partial class frmMain : Form
     {
+        TabPage tab;
         public frmMain()
         {
             InitializeComponent();
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabForm.TabPages.Count != 0) tabForm.TabPages.Remove(tab);
+            frmNhanVien frm = new frmNhanVien();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            tab = new TabPage("Quản lí nhân viên           ");
+            tab.Controls.Add(frm);
+            tabForm.TabPages.Add(tab);
+            frm.Visible = true;
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabForm.TabPages.Count != 0) tabForm.TabPages.Remove(tab);
+            frmPhongBan frm = new frmPhongBan();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            tab = new TabPage("Quản lí phòng ban          ");
+            tab.Controls.Add(frm);
+            tabForm.TabPages.Add(tab);
+            frm.Visible = true;
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabForm.TabPages.Count != 0) tabForm.TabPages.Remove(tab);
+            frmTaiKhoan frm = new frmTaiKhoan();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            tab = new TabPage("Quản lí tài khoản          ");
+            tab.Controls.Add(frm);
+            tabForm.TabPages.Add(tab);
+            frm.Visible = true;
+        }
+
+        private void hệThốngToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void tabForm_DrawItem(object sender, DrawItemEventArgs e)
         {
-            dgvNhanVien.DataSource = NhanVienDAO.LoadDataNV();
-            SetHeaderColumn();
-            LoadComboBox();
-        }
-        public void SetHeaderColumn()
-        {
-            dgvNhanVien.Columns["IDNhanVien"].HeaderText = "Mã nhân viên";
-            dgvNhanVien.Columns["HoTen"].HeaderText = "Họ và tên";
-            dgvNhanVien.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dgvNhanVien.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dgvNhanVien.Columns["QueQuan"].HeaderText = "Quê quán";
-            dgvNhanVien.Columns["ChucVu"].HeaderText = "Chức vụ";
-            dgvNhanVien.Columns["QuanLi"].HeaderText = "Quản lí";
-            dgvNhanVien.Columns["Luong"].HeaderText = "Lương";
-            dgvNhanVien.Columns["TenPhong"].HeaderText = "Tên phòng";
-            dgvNhanVien.Columns["IDQuanLi"].Visible = false;
-            dgvNhanVien.Columns["IDPhong"].Visible = false;
-        }
-        public void LoadComboBox()
-        {
-            cboPhongBan.DataSource = PhongBanDAO.LoadDataPB();
-            cboPhongBan.ValueMember = "IDPhong";
-            cboPhongBan.DisplayMember = "TenPhong";
-            cboQuanLi.DataSource = NhanVienDAO.LoadDataNV();
-            cboQuanLi.ValueMember = "IDNhanVien";
-            cboQuanLi.DisplayMember = "HoTen";
-        }
-        private void dgvNhanVien_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow dr = dgvNhanVien.SelectedRows[0];
-            txtIDNhanVien.Text = dr.Cells["IDNhanVien"].Value.ToString();
-            txtHoTen.Text = dr.Cells["HoTen"].Value.ToString();
-            txtLuong.Text = dr.Cells["Luong"].Value.ToString();
-            txtQueQuan.Text = dr.Cells["QueQuan"].Value.ToString();
-            txtChucVu.Text = dr.Cells["ChucVu"].Value.ToString();
-            DateTime dt;
-            DateTime.TryParse(dr.Cells["NgaySinh"].Value.ToString(), out dt);
-            if (dt.Year < 1995)
-            {
-                dtpNgaySinh.Value = DateTimePicker.MinimumDateTime;
-            }
-            else
-            {
-                dtpNgaySinh.Value = dt;
-
-            }
-            cboPhongBan.SelectedValue = dr.Cells["IDPhong"].Value;
-            cboQuanLi.SelectedValue = dr.Cells["IDQuanLi"].Value;
-            if (dr.Cells["GioiTinh"].Value.ToString().ToUpper() == "NAM")
-            {
-                rdbNam.Checked = true;
-            }
-            else
-            {
-                rdbNu.Checked = true;
-            }
-        }
-        private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmThemTaiKhoan frm = new FrmThemTaiKhoan();
-            frm.ShowDialog();
+            e.Graphics.DrawString("✖", e.Font, Brushes.Red, e.Bounds.Right - 15, e.Bounds.Top + 4);
+            e.Graphics.DrawString(this.tabForm.TabPages[e.Index].Text, e.Font, Brushes.Black, e.Bounds.Left + 12, e.Bounds.Top + 4);
+            e.DrawFocusRectangle();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void tabForm_MouseDown(object sender, MouseEventArgs e)
         {
-            try
+            for (int i = 0; i < this.tabForm.TabPages.Count; i++)
             {
-                dgvNhanVien.DataSource = NhanVienDAO.SearchNV(txtTimKiem.Text);
-                ReadOnly1();
-            }
-            catch
-            {
-                MessageBox.Show("Không tìm thấy !");
-            }
-        }
-
-        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyCode == Keys.Enter)
+                Rectangle r = tabForm.GetTabRect(i);
+                //Getting the position of the "x" mark.
+                Rectangle closeButton = new Rectangle(r.Right - 15, r.Top + 4, 9, 7);
+                if (closeButton.Contains(e.Location))
                 {
-                    dgvNhanVien.DataSource = NhanVienDAO.SearchNV(txtTimKiem.Text);
-                    ReadOnly1();
+                    if (MessageBox.Show("Would you like to Close this Tab?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.tabForm.TabPages.RemoveAt(i);
+                        break;
+                    }
                 }
             }
-           catch
-            {
-                MessageBox.Show("Không tìm thấy !");
-            }
         }
 
-        public void ReadOnly1()
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtChucVu.ReadOnly = true;
-            txtHoTen.ReadOnly = true;
-            txtIDNhanVien.ReadOnly = true;
-            txtLuong.ReadOnly = true;
-            txtQueQuan.ReadOnly = true;
-            cboPhongBan.Enabled = false;
-            dtpNgaySinh.Enabled = false;
-            cboQuanLi.Enabled = false;
-            rdbNam.Enabled = false;
-            rdbNu.Enabled = false;
+            Application.Restart();
         }
     }
 }
