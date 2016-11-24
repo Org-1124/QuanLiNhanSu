@@ -153,6 +153,7 @@
             // 
             // dgvPhongBan
             // 
+            this.dgvPhongBan.AllowUserToResizeRows = false;
             this.dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

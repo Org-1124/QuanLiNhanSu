@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -89,6 +90,22 @@ namespace QuanLiNhanSu
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void phiênBảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string HelpPath;
+            HelpPath = Application.StartupPath + @"\Helps\Trợ giúp quản lý nhân viên.docx";
+            if (File.Exists(HelpPath))
+            {
+                System.Diagnostics.ProcessStartInfo proStarInfor = new System.Diagnostics.ProcessStartInfo();
+                HelpPath = "\"" + HelpPath + "\"";
+                System.Diagnostics.Process.Start("WINWORD.EXE", HelpPath);
+            }
+            else
+                MessageBox.Show("File trợ giúp không tồn tại. " + System.Environment.NewLine +
+                    "Kiểm tra lại đường dẫn: " + HelpPath, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

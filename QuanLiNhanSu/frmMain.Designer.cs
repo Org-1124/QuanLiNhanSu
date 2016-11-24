@@ -74,7 +74,8 @@
             // 
             this.phiênBảnToolStripMenuItem.Name = "phiênBảnToolStripMenuItem";
             this.phiênBảnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.phiênBảnToolStripMenuItem.Text = "Phiên bản";
+            this.phiênBảnToolStripMenuItem.Text = "Hướng dẫn";
+            this.phiênBảnToolStripMenuItem.Click += new System.EventHandler(this.phiênBảnToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 

@@ -37,7 +37,7 @@ namespace QuanLiNhanSu
 
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
-            dgvTaiKhoan.DataSource = db.TaiKhoans;
+            LoadDataTaiKhoan();
             ChiDoc();
             HienButton();
         }
@@ -65,7 +65,7 @@ namespace QuanLiNhanSu
         }
         private void ChoViet()
         {
-            txtIDTaiKhoan.ReadOnly = false;
+            txtIDTaiKhoan.ReadOnly = true;
             txtTenDangNhap.ReadOnly = false;
             txtMatKhau.ReadOnly = false;
         }
@@ -93,6 +93,7 @@ namespace QuanLiNhanSu
 
         void SuaTaiKhoan()
         {
+            AnButton();
             TaiKhoan tk = db.TaiKhoans.Where(n => n.IDTaiKhoan == int.Parse(txtIDTaiKhoan.Text)).First();
             tk.TenDangNhap = txtTenDangNhap.Text;
             tk.MatKhau = txtMatKhau.Text;
@@ -102,10 +103,17 @@ namespace QuanLiNhanSu
 
         void XoaTaiKhoan()
         {
-            TaiKhoan tk = db.TaiKhoans.Where(n => n.IDTaiKhoan == int.Parse(txtIDTaiKhoan.Text)).First();
-            db.TaiKhoans.DeleteOnSubmit(tk);
-            db.SubmitChanges();
-            LoadDataTaiKhoan();
+            try
+            {
+                TaiKhoan tk = db.TaiKhoans.Where(n => n.IDTaiKhoan == int.Parse(txtIDTaiKhoan.Text)).First();
+                db.TaiKhoans.DeleteOnSubmit(tk);
+                db.SubmitChanges();
+                LoadDataTaiKhoan();
+            }
+            catch
+            {
+                MessageBox.Show("Không có gì để xóa");
+            }
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -145,11 +153,13 @@ namespace QuanLiNhanSu
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            HienButton();            
+            HienButton();
+            ChiDoc();       
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            AnButton();
             lc = LuaChon.Sua;
             ChoViet();
         }
